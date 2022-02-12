@@ -1,0 +1,46 @@
+<%= form_with(model: course) do |f| %>
+  <div class='fields'>
+    <%= f.label :name, '名稱' %> 
+    <%= f.text_field :name %> 
+  </div>
+
+  <div class='fields'>
+    <%= f.label :theme, '主題' %> 
+    <%= f.text_field :theme %> 
+  </div>
+
+  <div class='fields'>
+    <%= f.label :currency, '幣別' %> 
+    <%= f.text_field :currency %> 
+  </div>
+
+  <div class='fields'>
+    <%= f.label :price, '價格' %> 
+    <%= f.number_field :price %> 
+  </div>
+
+  <div class='fields'>
+    <%= f.label :type, '類型' %> 
+    <%= f.text_field :type %> 
+  </div>
+
+  <div class='fields'>
+    <%= f.label :url, '連結' %> 
+    <%= f.text_field :url %> 
+  </div>
+
+  <div class='fields'>
+    <%= f.label :describe, '描述' %> 
+    <%= f.text_area :describe %> 
+  </div>
+
+    <div class='fields'>
+    <%= f.label :date, '效期' %> 
+    <%= f.text_area :date %> 
+  </div>
+
+  <div class='action'>
+    <%= f.submit btn%>
+  </div>
+
+<% end %>
