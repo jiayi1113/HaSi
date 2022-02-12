@@ -1,0 +1,43 @@
+<% if current_user || current_admin %>
+  <%= link_to('登出', destroy_user_session_path, :method => :delete) %> 
+  <%= link_to('修改密碼', edit_registration_path(:user)) %>
+<% else %>
+  <%= link_to('會員登入', new_session_path(:user)) %>
+  <%= link_to('管理員登入', new_session_path(:admin)) %>
+<% end %>
+
+<h1>課程列表</h1>
+
+<% if current_admin %>
+<%= link_to "新增課程", new_course_path %>
+<% end %>
+
+<table>
+  <tr>
+    <td>名稱</td>
+    <td>主題</td>
+    <td>幣別</td>
+    <td>價格</td>
+    <td>類型</td>
+    <td>url</td>
+    <td>描述</td>
+    <td>效期</td>
+  </tr>
+
+  <% @courses.each do |course| %>
+    <tr>
+      <td><%= course.name %></td>
+      <td><%= course.theme %></td>
+      <td><%= course.currency %></td>
+      <td><%= course.price %></td>
+      <td><%= course.type %></td>
+      <td><%= link_to course.name , course_path(course.id)%></td>
+      <td><%= course.describe %></td>
+      <td><%= course.date %></td>
+      <% if current_admin %>
+        <td><%= link_to "修改", edit_course_path(course.id) %></td>
+        <td><%= link_to "刪除", course_path(course.id), method: 'delete', data: {confirm: '確認刪除?'} %></td>
+      <% end %>
+    </tr>
+    <% end %>
+</table>
