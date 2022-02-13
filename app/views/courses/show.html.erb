@@ -1,9 +1,17 @@
-<h1>課程內容</h1>
-
-<div>名稱：<%= @course.name %></div>
-<div>主題：<%= @course.theme %></div>
-<div>幣別：<%= @course.currency %></div>
-<div>價格：<%= @course.price %></div>
-<div>類型：<%= @course.type %></div>
-<div>描述：<%= @course.describe %></div>
-<div>效期：<%= @course.date %></div>
+<div class="flex items-center p-10 w-full h-full bg-white">
+	<div class="border-t border-b pt-16 grid grid-cols-2 gap-8">
+    <div class="flex flex-col">
+      <div class="flex flex-col gap-4">
+        <h1 class="capitalize text-1xl font-extrabold">課程介紹</h1>
+        <h2 class="capitalize text-3xl font-extrabold"><%= @course.name %></h2>
+        <h3 class="text-3xl"><%= @course.currency %><%= @course.price %></h3>
+        <p class="text-sm text-gray-500	">主題：<%= @course.theme %></p>
+        <p class="text-sm text-gray-500	">類型：<%= @course.type %></p>
+        <p class="text-lg text-gray-500	">課程描述：<%= @course.describe %></p>
+        <div class="flex items-center gap-4 my-6 cursor-pointer ">
+          <div class="bg-blue-600 px-5 py-3 text-white rounded-lg w-2/4 text-center">購買課程</div>
+        </div>
+      </div>
+    </div>
+	</div>
+</div>
