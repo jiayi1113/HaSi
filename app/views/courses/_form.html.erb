@@ -1,46 +1,45 @@
 <%= form_with(model: course) do |f| %>
-  <div class='fields'>
-    <%= f.label :name, '名稱' %> 
-    <%= f.text_field :name %> 
+  <div class="min-h-screen md:px-20 pt-6">
+    <div class="rounded-md px-6 py-10 max-w-2xl mx-auto">
+      <h1 class="text-center text-2xl font-bold text-gray-500 mb-10"><%= btn%></h1>
+      <div class="space-y-4">
+        <div class='fields'>
+          <%= f.label :name, '名稱', class:"text-lx font-serif" %> 
+          <%= f.text_field :name, class:"w-full ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"%> 
+        </div>
+        <div class='fields'>
+          <%= f.label :theme, '主題', class:"text-lx font-serif" %> 
+          <%= f.text_field :theme, class:"w-full ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"%> 
+        </div>
+        <div class='fields'>
+          <%= f.label :currency, '幣別', class:"text-lx font-serif" %> 
+          <%= f.text_field :currency, class:"w-full ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"%> 
+        </div>
+        <div class='fields'>
+          <%= f.label :price, '價格', class:"text-lx font-serif" %> 
+          <%= f.text_field :price, class:"w-full ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"%> 
+        </div>
+        <div class='fields'>
+          <%= f.label :type, '類型', class:"text-lx font-serif" %> 
+          <%= f.text_field :type, class:"w-full ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"%> 
+        </div>
+        <div class='fields'>
+          <%= f.label :url, '連結', class:"text-lx font-serif" %> 
+          <%= f.text_field :url, class:"w-full ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"%> 
+        </div>
+        <div class='fields'>
+          <%= f.label :describe, '描述', class:"text-lx font-serif" %> 
+          <%= f.text_area :describe, class:"w-full ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"%> 
+        </div>
+        <div class='fields'>
+          <%= f.label :date, '效期', class:"text-lx font-serif" %> 
+          <%= f.text_field :date, class:"w-full ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"%> 
+        </div>
+        <div class='action'>
+          <%= f.submit btn, class:" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-blue-100 bg-blue-600"%>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class='fields'>
-    <%= f.label :theme, '主題' %> 
-    <%= f.text_field :theme %> 
-  </div>
-
-  <div class='fields'>
-    <%= f.label :currency, '幣別' %> 
-    <%= f.text_field :currency %> 
-  </div>
-
-  <div class='fields'>
-    <%= f.label :price, '價格' %> 
-    <%= f.number_field :price %> 
-  </div>
-
-  <div class='fields'>
-    <%= f.label :type, '類型' %> 
-    <%= f.text_field :type %> 
-  </div>
-
-  <div class='fields'>
-    <%= f.label :url, '連結' %> 
-    <%= f.text_field :url %> 
-  </div>
-
-  <div class='fields'>
-    <%= f.label :describe, '描述' %> 
-    <%= f.text_area :describe %> 
-  </div>
-
-    <div class='fields'>
-    <%= f.label :date, '效期' %> 
-    <%= f.text_area :date %> 
-  </div>
-
-  <div class='action'>
-    <%= f.submit btn%>
-  </div>
-
 <% end %>
+
