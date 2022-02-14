@@ -13,8 +13,13 @@
         </div>
         <div class='fields'>
           <%= f.label :currency, '幣別', class:"text-lx font-serif" %> 
-          <%= f.text_field :currency, class:"w-full ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"%> 
+          <%= f.select :currency, options_for_select(Course.currencies.map {|key, value| [key, Course.currencies.key(value)]}, @course.currency), class:"w-full ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"%> 
         </div>
+
+
+
+
+
         <div class='fields'>
           <%= f.label :price, '價格', class:"text-lx font-serif" %> 
           <%= f.text_field :price, class:"w-full ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"%> 
