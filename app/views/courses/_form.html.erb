@@ -21,7 +21,7 @@
         </div>
         <div class='fields'>
           <%= f.label :category, '類型', class:"text-lx font-serif" %> 
-          <%= f.text_field :category, class:"w-full ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"%> 
+          <%= f.select :category, options_for_select(Course.categories.map{|key, value| [key, Course.categories.key(value)]}, @course.category), class:"w-full ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"%> 
         </div>
         <div class='fields'>
           <%= f.label :url, '連結', class:"text-lx font-serif" %> 
