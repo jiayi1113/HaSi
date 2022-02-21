@@ -7,7 +7,10 @@
         <h3 class="text-3xl"><%= @course.price %><%= @course.currency %></h3>
         <p class="text-sm text-gray-500	">主題：<%= @course.theme %></p>
         <p class="text-sm text-gray-500	">類型：<%= @course.category %></p>
-        <p class="text-lg text-gray-500	">課程描述：<%= @course.describe %></p>
+        <p class="text-sm text-gray-500	">課程上架日期：<%= @course.start_time %></p>
+        <p class="text-sm text-gray-500	">課程下架日期：<%= @course.end_time %></p>
+        <p class="text-sm text-gray-500	">課程可使用效期：<%= @course.duration %>天</p>
+        <p class="text-sm text-gray-500	">課程描述：<%= @course.describe %></p>
         <div class="flex items-center gap-4 my-6 cursor-pointer ">
           <div class="bg-blue-600 px-5 py-3 text-white rounded-lg w-2/4 text-center">購買課程</div>
         </div>
