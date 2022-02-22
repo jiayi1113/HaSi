@@ -27,6 +27,7 @@
               <th class="px-5 py-3 border-b-2 text-left text-xs font-semibold tracking-wider">描述</th>
               <th class="px-5 py-3 border-b-2 text-left text-xs font-semibold tracking-wider">了解更多</th>
               <% if current_admin %>
+                <th class="px-5 py-3 border-b-2 text-left text-xs font-semibold tracking-wider">是否上架</th>
                 <th class="px-5 py-3 border-b-2 text-left text-xs font-semibold tracking-wider"></th>
                 <th class="px-5 py-3 border-b-2 text-left text-xs font-semibold tracking-wider"></th>
               <% end %>
@@ -39,8 +40,9 @@
                 <td class="px-5 py-5 text-sm"><%= course.describe %></td>
                 <td><%= link_to '詳細內容',course_path(course.id), class:"text-sm transition duration-150 hover:bg-gray-400 font-semibold py-2 px-4"%></td>
                 <% if current_admin %>
-                  <th><%= link_to "修改", edit_course_path(course.id), class:"text-sm transition duration-150 hover:bg-gray-200 bg-gray-300 font-semibold py-2 px-4"%></th>
-                  <th><%= link_to "刪除", course_path(course.id), method: 'delete', data: {confirm: '確認刪除?'}, class:"text-sm transition duration-150 hover:bg-gray-200 bg-gray-300 font-semibold py-2 px-4"%></th>
+                  <td class="pl-5 py-5 text-sm"><%= course.state %></td>
+                  <td><%= link_to "修改", edit_course_path(course.id), class:"text-sm transition duration-150 hover:bg-gray-200 bg-gray-300 font-semibold py-2 px-4"%></td>
+                  <td><%= link_to "刪除", course_path(course.id), method: 'delete', data: {confirm: '確認刪除?'}, class:"text-sm transition duration-150 hover:bg-gray-200 bg-gray-300 font-semibold py-2 px-4"%></td>
                 <% end %>
               </tr>
             <% end %>

@@ -1,8 +1,12 @@
 class CoursesController < ApplicationController
-  before_action :find_course, only: [:edit, :update, :destroy]
+  before_action :find_course, only: [:edit, :update, :destroy, :shelf]
 
   def index
-    @courses = Course.all 
+    if current_admin
+      @courses = Course.all
+    else
+      @courses = Course.where(state: 'true')
+    end
   end
 
   def show
@@ -38,9 +42,18 @@ class CoursesController < ApplicationController
     redirect_to courses_path
   end
 
+  def shelf
+    if @course.state
+      @course.update(state: false)
+    else
+      @course.update(state: true)
+    end
+    redirect_to courses_path
+  end
+
   private
   def course_params
-    params.require(:course).permit(:name, :theme, :currency, :price, :url, :describe, :duration, :category, :start_time, :end_time)
+    params.require(:course).permit(:name, :theme, :currency, :price, :url, :describe, :duration, :category, :start_time, :end_time, :state)
   end
 
   def find_course

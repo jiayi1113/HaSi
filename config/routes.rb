@@ -4,5 +4,9 @@ Rails.application.routes.draw do
 
   root "courses#index"
 
-  resources :courses
+  resources :courses do
+    member do
+      get :shelf
+    end
+  end
 end

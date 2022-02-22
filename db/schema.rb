@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_21_075231) do
+ActiveRecord::Schema.define(version: 2022_02_21_152433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2022_02_21_075231) do
     t.string "theme"
     t.float "price"
     t.integer "currency"
-    t.string "state"
+    t.boolean "state", default: false
     t.string "url"
     t.string "describe"
     t.integer "duration"
