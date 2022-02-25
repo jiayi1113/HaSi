@@ -1,5 +1,8 @@
 class Course < ApplicationRecord
   belongs_to :admin
+  has_many :orders
+  has_many :users, through: :orders
+
 
   enum currency: {TWD: 0, USD: 1, JPY: 2}
   enum category: {國文: 0, 英文: 1, 數學: 2, 自然: 3}
