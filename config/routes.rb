@@ -9,4 +9,6 @@ Rails.application.routes.draw do
       get :shelf
     end
   end
+
+  mount ApiRoot => ApiRoot::PREFIX
 end
