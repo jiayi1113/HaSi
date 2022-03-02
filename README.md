@@ -1,4 +1,5 @@
 # README
+https://ha-si.herokuapp.com
 
 * Ruby Version 3.0.0
 * 資料庫：PostgreSQL
